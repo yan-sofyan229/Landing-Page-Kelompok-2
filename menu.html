@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu - Restoran Sujoabil</title>
+    <style>
+        :root {
+            --primary-color: #d4af37;
+            /* emas */
+            --secondary-color: #1a1a1a;
+            /* hitam pekat */
+            --accent-color: #8b4513;
+            /* coklat */
+            --light-bg: #f9f9f9;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Tombol Kembali */
+        .floating-back {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            z-index: 9999;
+        }
+
+        .floating-back:hover {
+            transform: scale(1.1);
+        }
+
+        /* Header */
+        .menu-header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: white;
+            text-align: center;
+            padding: 80px 20px 50px;
+            position: relative;
+        }
+
+        .menu-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .menu-header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .menu-header p {
+            font-size: 1.2rem;
+            color: #f2f2f2;
+        }
+
+        /* Container */
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 16px;
+        }
+
+        /* Category */
+        .menu-category {
+            margin-bottom: 60px;
+        }
+
+        .menu-category h2 {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        /* Menu Grid */
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-item {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-item h3 {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        .menu-item p {
+            color: #555;
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin: 0 15px 15px;
+            line-height: 1.6;
+        }
+
+        .menu-item .harga {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            text-align: right;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 12px 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Footer */
+        .menu-footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--secondary-color);
+            color: white;
+            margin-top: 60px;
+        }
+
+        .menu-footer p {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .menu-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .menu-header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Tombol Kembali -->
+    <a href="index.html" class="floating-back">←</a>
+
+    <header class="menu-header">
+        <h1>Menu Restoran Sujoabil</h1>
+        <p>Cita Rasa Indonesia dengan Sentuhan Bumbu Tradisional</p>
+    </header>
+
+    <div class="menu-container">
+        <section class="menu-category">
+            <h2>Makanan Pembuka</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="sup ayam.jpg" alt="Sup Ayam">
+                    <h3>Sup Ayam</h3>
+                    <p>Nikmati kehangatan Sup Ayam kami yang dimasak dari kaldu ayam asli dengan sayuran segar dan
+                        potongan ayam lembut.</p>
+                    <div class="harga">Rp 35.000</div>
+                </div>
+                <div class="menu-item">
+                    <img src="salad buah.jpg" alt="Salad Buah">
+                    <h3>Salad Buah</h3>
+                    <p>Segarnya potongan buah pilihan berpadu dengan saus yogurt manis dan lembut.</p>
+                    <div class="harga">Rp 20.000</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-category">
+            <h2>Makanan Utama</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="nasi goreng.jpg" alt="Nasi Goreng Spesial">
+                    <h3>Nasi Goreng Spesial</h3>
+                    <p>Nasi goreng khas Indonesia yang dimasak dengan bumbu rahasia dan disajikan bersama ayam suwir,
+                        telur, dan udang segar.</p>
+                    <div class="harga">Rp 35.000</div>
+                </div>
+                <div class="menu-item">
+                    <img src="mie pangsit.jpg" alt="Mie Pangsit">
+                    <h3>Mie Pangsit</h3>
+                    <p>Mie kenyal dengan ayam berbumbu gurih dan pangsit renyah yang menggugah selera.</p>
+                    <div class="harga">Rp 20.000</div>
+                </div>
+                <div class="menu-item">
+                    <img src="ayam bakar.jpg" alt="Ayam Bakar">
+                    <h3>Ayam Bakar</h3>
+                    <p>Ayam bakar berbumbu rempah pilihan, dimasak hingga empuk dengan rasa manis gurih yang nikmat.</p>
+                    <div class="harga">Rp 40.000</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-category">
+            <h2>Makanan Penutup</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="pancake.jpg" alt="Pancake">
+                    <h3>Pancake</h3>
+                    <p>Pancake lembut disajikan hangat dengan sirup maple, buah segar, dan taburan gula halus.</p>
+                    <div class="harga">Rp 35.000</div>
+                </div>
+                <div class="menu-item">
+                    <img src="tiramisu.jpg" alt="Tiramisu">
+                    <h3>Tiramisu</h3>
+                    <p>Tiramisu lembut dengan lapisan sponge cake espresso dan krim mascarpone yang manis seimbang.</p>
+                    <div class="harga">Rp 20.000</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="menu-footer">
+        <p>&copy; 2025 Restoran Sujoabil — Selamat Menikmati.</p>
+    </footer>
+
+</body>
+
+</html>
